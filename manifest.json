@@ -1,10 +1,21 @@
 {
-    "name": "Dev Ada Team 7",
+    "name": "Sustain-A-Pet",
     "description": "Base Level Extension",
-    "version": "1.0",
+    "version": "1.0.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "hello.html",
-        "default_icon": "./images/pixel_rock.png"
-    }
+        "default_icon": "./images/pixel_pom.png"
+    },
+    "background": {
+        "service_worker": "service-worker.js",
+        "type": "module"
+    },
+    "permissions": [
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*/"
+    ]
 }
