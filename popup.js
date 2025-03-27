@@ -29,3 +29,30 @@ async function feedMe() {
 
 document.getElementById("petButton").addEventListener("click", petMe);
 document.getElementById("feedButton").addEventListener("click", feedMe);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const happinessMeter = document.getElementById("happiness");
+    const petButton = document.getElementById("petButton");
+    const feedButton = document.getElementById("feedButton");
+
+    // Function to change happiness
+    function changeHappiness(amount) {
+        let currentValue = parseInt(happinessMeter.value);
+        let newValue = Math.max(0, Math.min(currentValue + amount, 100));
+        happinessMeter.value = newValue;
+    }
+
+    // listeners for increasing happiness
+    petButton.addEventListener("click", function () {
+        changeHappiness(5);
+    });
+
+    feedButton.addEventListener("click", function () {
+        changeHappiness(10);
+    });
+
+    // decrease happiness over time automatically
+    setInterval(function () {
+        changeHappiness(-1); // Decrease happiness
+    }, 4000);
+});
