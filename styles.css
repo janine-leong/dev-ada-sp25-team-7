@@ -1,0 +1,150 @@
+/* General */
+body {
+    background-color: #f6f9da;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    width: 500px;
+    height: 500px;
+    overflow: hidden; /* prevents resizing due to content changes */
+}
+
+/* Title */
+h1 {
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+/* Happiness Meter*/
+.meter-container {
+    margin-bottom: 15px;
+}
+
+/* Happiness label*/
+label {
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+progress {
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    appearance: none;
+}
+
+/* Progress bar*/
+progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+/* Image*/
+.img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+img {
+    /* display: block;
+    margin: 0 auto 15px auto; */
+    border-radius: 10px;
+}
+
+/* Button*/
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* margin: 5px; */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.floating {
+    float: left;
+    width: 50%;
+}
+.pettingtext {
+    background-color: whitesmoke;
+    border: 2px solid #333;
+    border-radius: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    margin: 5px;
+    width: 130px;
+}
+.textboxpetcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feedingtext {
+    background-color: whitesmoke;
+    border: 2px solid #333;
+    border-radius: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    margin: 5px;
+    width: 130px;
+}
+
+.floatingtext {
+    position: absolute;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    text-align: center;
+}
+
+/* position near the pet */
+.randomtip {
+    top: 50px; /* adjust based on pet's position */
+    left: 50%; 
+    transform: translateX(-50%);
+    animation: fadeInOut 7s ease-in-out;
+}
+
+/* smooth fade effect */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
