@@ -4,111 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension Title</title>
-    <style>
-        /* General */
-        body {
-            background-color: #f6f9da;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Title */
-        h1 {
-            font-family: 'Georgia', serif;
-            color: #333;
-        }
-
-        /* Happiness Meter*/
-        .meter-container {
-            margin-bottom: 15px;
-        }
-
-        /* Happiness label*/
-        label {
-            font-size: 13px; 
-            font-weight: bold; 
-            color: #333; 
-        }
-
-        progress {
-            width: 80%;
-            height: 20px;
-            border-radius: 10px;
-            appearance: none;
-        }
-
-        /* Progress bar*/
-        progress::-webkit-progress-bar {
-            background-color: #ddd;
-            border-radius: 10px;
-        }
-
-        progress::-webkit-progress-value {
-            background-color: #4CAF50;
-            border-radius: 10px;
-        }
-
-        /* Image*/
-        img {
-            display: block;
-            margin: 0 auto 15px auto;
-            border-radius: 10px;
-        }
-
-        /* Button*/
-        button {
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-        .floating {
-            float: left;
-            width: 50%;
-        }
-        .floatingtext {
-            border: 2px solid #333;
-            border-radius: 5%;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            align-items: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 14px;
-            margin: 5px;
-            width: 130px;
-        }
-        .textboxpetcontainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- link to CSS styles sheet -->
 </head>
 <body>
     <h1>Sustain-A-Pet</h1>
 
     <!-- Happiness Meter -->
     <div class="meter-container">
-        <label for="happiness">Health🌿</label>
+        <label for="happiness">Health 🌿</label>
         <progress id="happiness" value="50" max="100"></progress>
     </div>
 
     <div class="textboxpetcontainer">
-        <div class="floatingtext">
+        <div class="pettingtext">
             <p>Wow, thank you so much for petting me!! ^^</p>
+        </div>
+        <div class="feedingtext">
+            <p>Yummy!!! :9</p>
         </div>
         <div class="img">
             <img src="./images/pixel_pom.png" width="300" height="300" alt="Pixelated Pomeranian with leaf on head">
