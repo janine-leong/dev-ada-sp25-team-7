@@ -73,6 +73,28 @@
         button:hover {
             background-color: #45a049;
         }
+        .floating {
+            float: left;
+            width: 50%;
+        }
+        .floatingtext {
+            border: 2px solid #333;
+            border-radius: 5%;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            align-items: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+            margin: 5px;
+            width: 130px;
+        }
+        .textboxpetcontainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -84,7 +106,14 @@
         <progress id="happiness" value="50" max="100"></progress>
     </div>
 
-    <img src="./images/pixel_pom.png" width="300" height="300" alt="Pixelated Pomeranian with leaf on head">
+    <div class="textboxpetcontainer">
+        <div class="floatingtext">
+            <p>Wow, thank you so much for petting me!! ^^</p>
+        </div>
+        <div class="img">
+            <img src="./images/pixel_pom.png" width="300" height="300" alt="Pixelated Pomeranian with leaf on head">
+        </div>
+    </div>
 
     <button id="petButton">Pet Me!</button>
     <button id="feedButton">Feed Me!</button>
