@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const feedButton = document.getElementById("feedButton");
     const pettingText = document.querySelector(".pettingtext");
     const feedingText = document.querySelector(".feedingtext");
-    const randomTip = document.querySelector("p");
+    const pixelPom = document.getElementById("pixelPom");
 
     // Function to change happiness
     function changeHappiness(amount) {
@@ -59,15 +59,19 @@ document.addEventListener("DOMContentLoaded", function () {
         changeHappiness(-1); // Decrease happiness
     }, 4000);
 
-    // petting speech bubble
-    pettingText.style.display = "none"; // initially hide the floating text
-    petButton.addEventListener("click", () => {
-        pettingText.style.display = "block"; // toggle visibility
-
-        // the text box will disappear after 3 seconds
+    // function for petting action
+    function petMe() {
+        changeHappiness(5);
+        
+        pettingText.style.display = "block";
         setTimeout(() => {
             pettingText.style.display = "none";
         }, 3000);
+    }
+    // petting speech bubble
+    pettingText.style.display = "none"; // initially hide the floating text
+    petButton.addEventListener("click", () => {
+        petMe();
     })
 
     // make the speech for feeding appear + auto disappear
@@ -109,4 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     scheduleRandomTips();
+
+    pixelPom.addEventListener("click", petMe);
 });
