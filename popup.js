@@ -63,26 +63,40 @@ document.addEventListener("DOMContentLoaded", function () {
     function petMe() {
         changeHappiness(5);
         
+        // Hide the feeding text if it's visible
+        feedingText.style.display = "none";
+
         pettingText.style.display = "block";
         setTimeout(() => {
             pettingText.style.display = "none";
         }, 3000);
     }
+
+    // function for feeding action
+    function feedMe() {
+        changeHappiness(10);
+
+        // Hide the petting text if it's visible (difference)
+        pettingText.style.display = "none";
+        
+        // Show feeding text
+        feedingText.style.display = "block";
+        
+        setTimeout(() => {
+            feedingText.style.display = "none"; // Hide after 3 seconds
+        }, 3000);
+    }
+
     // petting speech bubble
     pettingText.style.display = "none"; // initially hide the floating text
     petButton.addEventListener("click", () => {
         petMe();
     })
 
-    // make the speech for feeding appear + auto disappear
+    // feeding speech bubble
     feedingText.style.display = "none"; // initially hide the floating text
     feedButton.addEventListener("click", () => {
-        feedingText.style.display = "block"; // toggle visibility
-
-        // the text box will disappear after 3 seconds
-        setTimeout(() => {
-            feedingText.style.display = "none";
-        }, 3000);
+        feedMe();
     })
 
     // create a dedicated random tip box

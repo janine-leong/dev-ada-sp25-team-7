@@ -88,6 +88,9 @@ button:hover {
 }
 .pettingtext {
     background-color: whitesmoke;
+    position: absolute;
+    top: 150px;
+    left: 10px;
     border: 2px solid #333;
     border-radius: 5%;
     padding-left: 10px;
@@ -107,6 +110,9 @@ button:hover {
 }
 .feedingtext {
     background-color: whitesmoke;
+    position: absolute;
+    top: 150px;
+    left: 10px;
     border: 2px solid #333;
     border-radius: 5%;
     padding-left: 10px;
@@ -135,7 +141,7 @@ button:hover {
 
 /* position near the pet */
 .randomtip {
-    top: 50px; /* adjust based on pet's position */
+    top: 450px; /* adjust based on pet's position */
     left: 50%; 
     transform: translateX(-50%);
     animation: fadeInOut 7s ease-in-out;
