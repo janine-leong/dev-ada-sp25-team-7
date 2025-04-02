@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // function to show random tips
     function showRandomTip() {
+        if (randomTipBox.style.display === "block") return; //if a tip is showing next will only appear after that disappears
         randomTipBox.textContent = getRandomTip();
         randomTipBox.style.display = "block";
 
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // schedule random tips
     function scheduleRandomTips() {
         setInterval(() => {
-            if (Math.random() < 0.5) { // 50% chance
+            if (randomTipBox.style.display === "none" && Math.random() < 0.6) { // 60% chance
                 showRandomTip();
             }
         // I left the interval at 1-3 seconds for testing!
