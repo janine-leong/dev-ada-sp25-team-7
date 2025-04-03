@@ -13,8 +13,31 @@ export function getRandomTip() {
         "Don’t doomscroll! Take a digital detox to reduce your digital carbon footprint and practice being present. 🪷",
         "Periodically clear your web browser’s cache and cookies to free up storage space. 🍪",
         "Try to compress (.zip) large files before sending them. 🤏",
-        "Please close unused tabs in your web browser! ❎"
+        "Please close unused tabs in your web browser! ❎",
+        "Check Activity Monitor for things consuming your battery power! 📈"
     ];
 
-    return tips[Math.floor(Math.random() * tips.length)];
+    const night_tips = [
+        "Close unused tabs and apps before the end of the day! 🌐",
+        "Time to sleep and let your devices do the same ... 💤",
+        "Good Night! 💤",
+        "PixelPom is sleepy ... 🐶"
+    ];
+
+    const morning_tips = [
+        "PixelPom is ready to start the day with full battery! 🔋",
+        "Don't forget to feed PixelPom breakfast! 🦴"
+    ];
+
+    let display_tip = tips;
+    const now = moment();
+    const hoursUntilMidnight = moment().endOf('day').diff(now, 'hours');
+
+    if (hoursUntilMidnight < 3) {
+        display_tip = tips.concat(night_tips);
+    } else if (hoursUntilMidnight > 13) {
+        display_tip = tips.concat(morning_tips);
+    }
+
+    return display_tip[Math.floor(Math.random() * display_tip.length)];
 }
