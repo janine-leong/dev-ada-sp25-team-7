@@ -1,7 +1,7 @@
 {
     "name": "Sustain-A-Pet",
-    "description": "Base Level Extension",
-    "version": "1.0.0",
+    "description": "Sustain the health of your Pixel Pomeranian and be good to the environment!",
+    "version": "0.1.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "hello.html",
@@ -12,6 +12,7 @@
         "type": "module"
     },
     "permissions": [
+        "storage",
         "scripting"
     ],
     "host_permissions": [

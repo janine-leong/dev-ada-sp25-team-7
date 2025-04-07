@@ -30,12 +30,12 @@ export function getRandomTip() {
     ];
 
     let display_tip = tips;
-    const now = moment();
-    const hoursUntilMidnight = moment().endOf('day').diff(now, 'hours');
+    const now = new Date();
+    const currentHour = now.getHours();
 
-    if (hoursUntilMidnight < 3) {
+    if (currentHour > 20) {
         display_tip = tips.concat(night_tips);
-    } else if (hoursUntilMidnight > 13) {
+    } else if (currentHour < 12) {
         display_tip = tips.concat(morning_tips);
     }
 

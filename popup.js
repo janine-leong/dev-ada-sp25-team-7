@@ -140,3 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+window.addEventListener('unload', () => {
+    chrome.storage.local.set({ lastClosedTime: Date.now() });
+});
