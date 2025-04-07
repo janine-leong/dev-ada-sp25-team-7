@@ -30,6 +30,10 @@ console.log("This is a popup!")
 // document.getElementById("petButton").addEventListener("click", petMe);
 // document.getElementById("feedButton").addEventListener("click", feedMe);
 
+const DECAY_PER_SECOND = 0.05;
+const MAX_HAPPINESS = 100;
+const MIN_HAPPINESS = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     const happinessMeter = document.getElementById("happiness");
     const petButton = document.getElementById("petButton");
@@ -37,11 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const pettingText = document.querySelector(".pettingtext");
     const feedingText = document.querySelector(".feedingtext");
     const pixelPom = document.getElementById("pixelPom");
+    const now = Date.now();
 
     // Function to change happiness
     function changeHappiness(amount) {
         let currentValue = parseInt(happinessMeter.value);
-        let newValue = Math.max(0, Math.min(currentValue + amount, 100));
+        let newValue = Math.max(MIN_HAPPINESS, Math.min(currentValue + amount, MAX_HAPPINESS));
         happinessMeter.value = newValue;
     }
 
@@ -58,6 +63,22 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(function () {
         changeHappiness(-1); // Decrease happiness
     }, 4000);
+    
+    // decrease happiness depending on last opening te extension
+    function backgroundHappinessDecay() {
+        chrome.storage.local.get(['lastClosedTime', 'happiness'], (result) => {
+            const lastClosed = result.lastClosedTime || now;
+            const timePassed = (now - lastClosed) / 1000;
+            let happiness = result.happiness ?? MAX_HAPPINESS;
+
+            const decay = timePassed * DECAY_PER_SECOND;
+            happiness = Math.max(MIN_HAPPINESS, happiness - decay);
+
+            happinessMeter.value = happiness;
+
+            chrome.storage.local.set({ happiness });
+        })
+    }
 
     // function for petting action
     function petMe() {
