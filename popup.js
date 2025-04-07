@@ -130,4 +130,13 @@ document.addEventListener("DOMContentLoaded", function () {
     scheduleRandomTips();
 
     pixelPom.addEventListener("click", petMe);
+
+    const bgColors = ["#f6f9da", "#e3f2fd", "#ffe0b2", "#e1bee7", "#dcedc8"];
+    let currentBgIndex = 0;
+
+    changeBgBtn.addEventListener("click", () => {
+        currentBgIndex = (currentBgIndex + 1) % bgColors.length;
+        document.body.style.backgroundColor = bgColors[currentBgIndex];
+    });
+
 });
