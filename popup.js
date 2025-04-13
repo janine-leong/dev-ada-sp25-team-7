@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentValue = parseInt(happinessMeter.value);
         let newValue = Math.max(MIN_HAPPINESS, Math.min(currentValue + amount, MAX_HAPPINESS));
         happinessMeter.value = newValue;
+
+        chrome.storage.local.set({ happiness: newValue });
     }
 
     // listeners for increasing happiness
@@ -147,7 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // I left the interval at 1-3 seconds for testing!
         }, Math.floor(Math.random() * (3000 - 1000) + 1000)); // 1s - 3s interval
     }
-
+    
+    backgroundHappinessDecay();
     scheduleRandomTips();
 
     pixelPom.addEventListener("click", petMe);
@@ -162,6 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-window.addEventListener('unload', () => {
+window.addEventListener('pagehide', () => {
     chrome.storage.local.set({ lastClosedTime: Date.now() });
 });
