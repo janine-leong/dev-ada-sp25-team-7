@@ -100,8 +100,9 @@ button:hover {
     padding-top: 10px;
     padding-bottom: 10px;
     align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
     margin: 5px;
     width: 130px;
 }
@@ -122,8 +123,9 @@ button:hover {
     padding-top: 10px;
     padding-bottom: 10px;
     align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
     margin: 5px;
     width: 130px;
 }
@@ -147,7 +149,8 @@ button:hover {
     left: 50%; 
     transform: translateX(-50%);
     animation: fadeInOut 7s ease-in-out;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Courier New', monospace;
 }
 
 /* smooth fade effect */
